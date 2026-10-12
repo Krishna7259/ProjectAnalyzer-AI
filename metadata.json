@@ -1,0 +1,6 @@
+{
+  "name": "ProjectsAnalyzer AI",
+  "description": "AI-Powered Project Analysis, Planning, Roadmap Generation & Intelligent Mentorship Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

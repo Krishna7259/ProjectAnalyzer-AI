@@ -1,0 +1,1045 @@
+{
+  "users": [
+    {
+      "id": "usr_aa43ecc3-da94-4025-91f2-548165e3e746",
+      "name": "Alex Hunter",
+      "email": "developer@projectsanalyzer.ai",
+      "createdAt": "2026-10-12T17:50:54.455Z",
+      "passwordHash": "acc528d3b9700fe1a2ce54fb27295b6e66b53fae652fcdaeab0bc26d9e628e9b21b2a8d159300a9dd03ea05e2d161fca008f2bf5f9eef72e1f457d1e6f465aa5",
+      "salt": "94bb51ecbb9617ca70d32c0732eb8a4d"
+    },
+    {
+      "id": "usr_58647f41-7bf0-4bd8-860a-76214156d673",
+      "name": "ijuhy",
+      "email": "siwato6101@18lover.com",
+      "createdAt": "2026-10-12T17:53:02.865Z",
+      "passwordHash": "778c6a63e70990ed5820c1550bb193119a0ba0a5a87ca81db2b00efb27e03b4a0ec1febc86499cffc50f890d42bf51e074d129db810a8e6fc4c4a2ae2460f68b",
+      "salt": "5d561e8719dc202c8ecd5f084ebcf42b"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj_ec3e8153-5db9-453f-adf9-17a3eafadf4b",
+      "userId": "usr_aa43ecc3-da94-4025-91f2-548165e3e746",
+      "title": "AI Cyber Threat Detection & Packet Analyzer",
+      "description": "Real-time packet inspection engine leveraging deep learning transformers to identify zero-day intrusion signatures, distributed DDoS anomalous payload patterns, and unauthorized network telemetry.",
+      "domain": "Cybersecurity",
+      "difficulty": "Advanced",
+      "status": "In Progress",
+      "progress": 33,
+      "blueprint": {
+        "title": "AI Cyber Threat Detection & Packet Analyzer",
+        "domain": "Cybersecurity",
+        "category": "Network Security & Intrusion Detection System",
+        "difficulty": "Advanced",
+        "overview": "Real-time packet inspection engine leveraging deep learning transformers to identify zero-day intrusion signatures, distributed DDoS anomalous payload patterns, and unauthorized network telemetry.",
+        "estimatedDuration": "6-8 weeks (60 hours)",
+        "problemStatement": {
+          "existingProblem": "Traditional signature-based firewalls and rule-based Snort systems fail to detect mutated polymorphic zero-day attacks and encrypted payload anomalies.",
+          "whyItMatters": "Enterprise networks face over 30,000 automated probe attacks daily, risking data exfiltration, ransomware hijacking, and service downtime.",
+          "proposedSolution": "A dual-engine neural inspection platform combining eBPF kernel packet capture with lightweight ONNX transformer classification to detect anomalies in sub-10ms intervals.",
+          "realWorldApplications": [
+            "Enterprise Perimeter Firewalls & Cloud VPC Protection",
+            "Financial High-Frequency Trading Network Audits",
+            "Healthcare HIPAA Medical Device Telemetry Defense",
+            "Industrial IoT SCADA Network Boundary Monitoring"
+          ]
+        },
+        "objectives": {
+          "mainObjective": "Build a production-ready neural intrusion detection pipeline capable of streaming network packet analysis.",
+          "specificObjectives": [
+            "Capture high-throughput network packets using eBPF or libpcap without frame dropping",
+            "Extract 42 statistical flow features (entropy, packet inter-arrival time, window size)",
+            "Deploy a quantized transformer model with 98.4% F1-score on benchmark PCAP corpora",
+            "Build a real-time responsive threat cockpit with automated firewall rule isolation"
+          ],
+          "expectedOutcomes": [
+            "Sub-15ms packet latency per batch analysis",
+            "99%+ precision on DDoS SYN-flood and SQL injection payloads",
+            "Exportable defense audit logs compliant with MITRE ATT&CK matrix"
+          ]
+        },
+        "feasibility": {
+          "score": 92,
+          "technicalFeasibility": "Highly feasible using modern kernel packet hooks and quantized ONNX runtime bindings.",
+          "implementationComplexity": "Medium-High (requires kernel buffer tuning, vector tokenization, and web sockets).",
+          "requiredResources": [
+            "Linux dev environment (Ubuntu 22.04 LTS)",
+            "Promiscuous network interface or virtual TUN/TAP adapter",
+            "Python 3.11 with PyTorch/ONNX Runtime & Node.js WebSocket gateway"
+          ],
+          "majorAssumptions": [
+            "Kernel has eBPF or libpcap privileges enabled",
+            "Sufficient CPU allocation for concurrent ring buffer reads"
+          ],
+          "expectedChallenges": [
+            "Buffer ring overflow under extreme packet saturation (10Gbps burst)",
+            "Encrypted TLS payload opacity requiring statistical flow metadata heuristics"
+          ]
+        },
+        "technologies": [
+          {
+            "name": "TypeScript / React",
+            "category": "Frontend",
+            "reason": "Reactive dashboard visualization with real-time WebSocket state updating"
+          },
+          {
+            "name": "Node.js & Express",
+            "category": "Backend",
+            "reason": "High concurrency async event loop for telemetry stream distribution"
+          },
+          {
+            "name": "Python & ONNX Runtime",
+            "category": "AI/ML",
+            "reason": "Sub-millisecond inference latency with quantized neural weights"
+          },
+          {
+            "name": "eBPF / libpcap",
+            "category": "Tool",
+            "reason": "Zero-copy kernel packet filtering directly from network device queues"
+          },
+          {
+            "name": "PostgreSQL & TimescaleDB",
+            "category": "Database",
+            "reason": "Time-series optimized logging for millions of security events per day"
+          },
+          {
+            "name": "Tailwind CSS",
+            "category": "Frontend",
+            "reason": "High-contrast dark telemetry theme with electric blue alert states"
+          }
+        ],
+        "requiredSkills": {
+          "programmingLanguages": [
+            "TypeScript",
+            "Python",
+            "C / eBPF Bytecode"
+          ],
+          "frameworks": [
+            "React",
+            "FastAPI / Express",
+            "Tailwind CSS"
+          ],
+          "coreConcepts": [
+            "TCP/IP Stack",
+            "Circular Ring Buffers",
+            "Confusion Matrix Analysis",
+            "MITRE ATT&CK Matrix"
+          ],
+          "practicalSkills": [
+            "Wireshark PCAP debugging",
+            "Docker compose orchestration",
+            "WebSocket telemetry streaming"
+          ]
+        },
+        "architecture": {
+          "pattern": "Reactive Event-Driven Micro-Pipelines with Kernel eBPF Hook",
+          "description": "Packets are ingested at the kernel boundary, passed into a lock-free user-space ring buffer, feature-extracted in Python, and streamed to the React Cockpit via WebSockets.",
+          "components": [
+            {
+              "layer": "Kernel Ingestion Layer",
+              "role": "Zero-copy packet filtering and timestamping",
+              "technologies": [
+                "eBPF / XDP",
+                "libpcap"
+              ]
+            },
+            {
+              "layer": "Inference Engine",
+              "role": "Feature extraction and quantized transformer classification",
+              "technologies": [
+                "Python",
+                "ONNX Runtime",
+                "NumPy"
+              ]
+            },
+            {
+              "layer": "Telemetry Gateway",
+              "role": "Threat event alerting and persistent storage",
+              "technologies": [
+                "Node.js",
+                "PostgreSQL",
+                "WebSockets"
+              ]
+            },
+            {
+              "layer": "Operator Cockpit",
+              "role": "Interactive visualization, threat filtering, and milestone review",
+              "technologies": [
+                "React",
+                "Lucide Icons",
+                "Tailwind CSS"
+              ]
+            }
+          ],
+          "dataFlow": [
+            "1. Raw network frame arrives at network interface card (NIC)",
+            "2. eBPF filter captures headers and passes payload to ring buffer",
+            "3. Feature extractor generates 42-dimensional flow vector",
+            "4. ONNX model scores threat probability (0.0 to 1.0)",
+            "5. If score > 0.85, event logged to DB and broadcast to UI cockpit"
+          ]
+        },
+        "learningRoadmap": [
+          {
+            "stepNumber": 1,
+            "topic": "Computer Networking & Protocol Internals",
+            "explanation": "Grasp OSI 7-layer model, TCP 3-way handshakes, IP headers, and packet fragmentation.",
+            "learningObjectives": [
+              "Understand TCP flags (SYN, ACK, FIN, RST)",
+              "Inspect raw PCAPs in Wireshark"
+            ],
+            "suggestedPractice": "Capture 50 packets using tcpdump and manually decode IP source and destination octets.",
+            "estimatedHours": "6 hours"
+          },
+          {
+            "stepNumber": 2,
+            "topic": "Feature Engineering for Network Security",
+            "explanation": "Transform raw byte sequences into numerical features: entropy, packet size variance, and inter-arrival timing.",
+            "learningObjectives": [
+              "Compute Shannon entropy of payloads",
+              "Calculate rolling window metrics"
+            ],
+            "suggestedPractice": "Write a Python script that calculates Shannon entropy of random text vs encrypted zip files.",
+            "estimatedHours": "8 hours"
+          },
+          {
+            "stepNumber": 3,
+            "topic": "Machine Learning Classification for Anomaly Detection",
+            "explanation": "Train decision trees and transformer models on the CIC-IDS2017 benchmark dataset.",
+            "learningObjectives": [
+              "Avoid data leakage in time-series splits",
+              "Evaluate precision, recall, and ROC-AUC"
+            ],
+            "suggestedPractice": "Train a RandomForestClassifier on network flow CSVs and export to ONNX format.",
+            "estimatedHours": "10 hours"
+          },
+          {
+            "stepNumber": 4,
+            "topic": "High-Throughput WebSocket Streaming",
+            "explanation": "Build asynchronous event pipelines that stream 100+ events/sec without UI stutter.",
+            "learningObjectives": [
+              "Debounce high-frequency events",
+              "Manage WebSocket reconnect logic"
+            ],
+            "suggestedPractice": "Create an Express WebSocket server streaming random security alerts to a React subscriber.",
+            "estimatedHours": "6 hours"
+          }
+        ],
+        "milestonesList": [
+          {
+            "stepNumber": 1,
+            "title": "Packet Ingestion & PCAP Parsing Core",
+            "description": "Set up raw socket ingestion and parse Ethernet, IPv4, TCP, and UDP headers into structured objects.",
+            "tasks": [
+              "Initialize network interface listener",
+              "Parse IP headers and port numbers",
+              "Unit test with sample PCAP files"
+            ],
+            "expectedDeliverable": "Working packet reader CLI outputting structured JSON flow events"
+          },
+          {
+            "stepNumber": 2,
+            "title": "Statistical Feature Extraction Pipeline",
+            "description": "Extract 42 flow features including byte distribution entropy, inter-packet arrival time, and TCP flag anomalies.",
+            "tasks": [
+              "Implement rolling 5-second window tracker",
+              "Calculate Shannon entropy on payloads",
+              "Export feature vectors to tensor format"
+            ],
+            "expectedDeliverable": "Real-time vector generator operating under 2ms per packet"
+          },
+          {
+            "stepNumber": 3,
+            "title": "ONNX Neural Inference Engine Integration",
+            "description": "Load pre-trained quantized threat model and evaluate incoming feature vectors in real time.",
+            "tasks": [
+              "Export PyTorch model to ONNX Int8",
+              "Benchmark inference latency",
+              "Calibrate classification threshold to 0.85"
+            ],
+            "expectedDeliverable": "Sub-10ms inference pipeline with threat probability scoring"
+          },
+          {
+            "stepNumber": 4,
+            "title": "Threat Event Dispatcher & Storage",
+            "description": "Store anomalous events in PostgreSQL and publish alerts to connected client sessions via WebSockets.",
+            "tasks": [
+              "Design security_events schema",
+              "Implement WebSocket broadcast channel",
+              "Add rate limiting and event aggregation"
+            ],
+            "expectedDeliverable": "Working database persistence and real-time streaming endpoint"
+          },
+          {
+            "stepNumber": 5,
+            "title": "Interactive Defense Dashboard & Telemetry UI",
+            "description": "Build responsive React interface displaying live telemetry graphs, threat alerts, and drill-down inspection.",
+            "tasks": [
+              "Create alert feed with severity tags",
+              "Build live packet volume chart",
+              "Add IP filtering and search"
+            ],
+            "expectedDeliverable": "Production-ready dark cybernetic defense dashboard"
+          },
+          {
+            "stepNumber": 6,
+            "title": "Comprehensive Security & MITRE ATT&CK Defense Audit",
+            "description": "Perform stress-testing under simulated DDoS attacks, benchmark false positive rates, and prepare final documentation.",
+            "tasks": [
+              "Replay DARPA/CIC-IDS attacks with tcpreplay",
+              "Validate zero frame-loss",
+              "Compile defense presentation slides"
+            ],
+            "expectedDeliverable": "Final verified system, defense slides, and project report"
+          }
+        ],
+        "challenges": [
+          {
+            "challenge": "Packet Dropping Under High-Volume Traffic Spikes",
+            "impact": "Can cause security systems to miss stealthy low-and-slow port scans or brute-force attempts.",
+            "recommendedSolution": "Utilize Linux ring buffers (PACKET_MMAP) or eBPF kernel filters to avoid expensive context switching."
+          },
+          {
+            "challenge": "High False-Positive Alarm Fatigue",
+            "impact": "Operators ignore critical alerts if regular TLS traffic triggers excessive false flags.",
+            "recommendedSolution": "Incorporate behavioral baseline whitelisting and dynamic sliding-window thresholds rather than static rules."
+          }
+        ],
+        "testingStrategy": {
+          "overview": "Multi-stage test suite including mock packet replaying, fuzz testing, and stress benchmarking.",
+          "types": [
+            "Unit Testing",
+            "PCAP Replay Testing",
+            "Latency Benchmarking",
+            "Fuzzing"
+          ],
+          "scenarios": [
+            {
+              "scenario": "Replay SYN-Flood PCAP attack",
+              "type": "Functional",
+              "expectedOutcome": "System detects DDoS with score > 0.95 within 100ms"
+            },
+            {
+              "scenario": "Corrupted Ethernet frame with invalid CRC",
+              "type": "Unit",
+              "expectedOutcome": "Packet safely discarded without crashing ingestion thread"
+            },
+            {
+              "scenario": "High packet volume (50,000 packets/sec)",
+              "type": "UI",
+              "expectedOutcome": "WebSocket throttles UI updates while DB records all critical events"
+            }
+          ]
+        },
+        "documentationGuide": {
+          "readmeStructure": [
+            "ProjectsAnalyzer AI - AI Cyber Threat Detection Blueprint",
+            "System Architecture & eBPF Data Flow Diagram",
+            "Hardware & Kernel Prerequisites",
+            "Quickstart Installation (Docker & Native)",
+            "Dataset Benchmarks & Confusion Matrix Results",
+            "MITRE ATT&CK Mapping & API Reference"
+          ],
+          "systemArchitectureNotes": "Emphasize the decoupling between kernel packet capture and asynchronous neural inference.",
+          "modulesExplanation": [
+            "src/ingestion: Raw socket & PCAP parser",
+            "src/inference: ONNX runtime integration",
+            "src/ui: React telemetry cockpit"
+          ],
+          "conclusionOutline": "Demonstrated how ML transformers reduce false positives by 74% compared to legacy signature matching."
+        },
+        "presentationGuide": {
+          "targetAudience": "University faculty, cybersecurity judges, and technical recruiters",
+          "slides": [
+            {
+              "slideNumber": 1,
+              "title": "Introduction & The Zero-Day Challenge",
+              "keyPoints": [
+                "Why legacy firewalls fail",
+                "Rise of encrypted malicious payloads"
+              ],
+              "presentationTip": "Open with a real-world statistic on recent ransomware breaches"
+            },
+            {
+              "slideNumber": 2,
+              "title": "Proposed Neural Architecture",
+              "keyPoints": [
+                "Zero-copy kernel capture",
+                "Lightweight ONNX transformer model"
+              ],
+              "presentationTip": "Display the architectural data flow diagram clearly"
+            },
+            {
+              "slideNumber": 3,
+              "title": "Live Demonstration",
+              "keyPoints": [
+                "Live injection of SYN-flood",
+                "Real-time alert trigger under 15ms"
+              ],
+              "presentationTip": "Have a pre-recorded backup video ready just in case"
+            },
+            {
+              "slideNumber": 4,
+              "title": "Evaluation & Future Scope",
+              "keyPoints": [
+                "98.4% detection rate",
+                "Hardware acceleration with FPGA/DPU"
+              ],
+              "presentationTip": "Summarize actionable takeaways and production readiness"
+            }
+          ],
+          "demoChecklist": [
+            "Verify local server is running",
+            "Load sample attack PCAP into tcpreplay",
+            "Open WebSocket dashboard in browser"
+          ]
+        },
+        "futureImprovements": [
+          "Hardware acceleration using SmartNICs and DPDK",
+          "Automated BGP blackholing to neutralize DDoS attacks at ISP level",
+          "Federated learning across multiple enterprise nodes without sharing raw PCAP data"
+        ]
+      },
+      "createdAt": "2026-10-12T17:50:54.457Z",
+      "updatedAt": "2026-10-12T17:50:54.457Z"
+    },
+    {
+      "id": "prj_be1cbd67-d653-4444-8ced-1b06726d6ef0",
+      "userId": "usr_aa43ecc3-da94-4025-91f2-548165e3e746",
+      "title": "ResumeFit AI: Intelligent Resume Grader & Tech Job Matcher",
+      "description": "ResumeFit AI is an automated resume evaluation and tech role matching platform tailored for early-career developers and students. The application extracts structured text from uploaded PDF resumes, analyzes core competencies, and evaluates formatting, readability, and technical keyword density. Leveraging natural language processing and TF-IDF vector similarity, it benchmarks applicant profiles against curated tech job postings to yield quantified fit scores and actionable improvement advice.",
+      "domain": "AI/Machine Learning",
+      "difficulty": "Beginner",
+      "status": "Planning",
+      "progress": 0,
+      "blueprint": {
+        "title": "ResumeFit AI: Intelligent Resume Grader & Tech Job Matcher",
+        "domain": "AI/Machine Learning",
+        "category": "Full-Stack Web Application",
+        "difficulty": "Beginner",
+        "overview": "ResumeFit AI is an automated resume evaluation and tech role matching platform tailored for early-career developers and students. The application extracts structured text from uploaded PDF resumes, analyzes core competencies, and evaluates formatting, readability, and technical keyword density. Leveraging natural language processing and TF-IDF vector similarity, it benchmarks applicant profiles against curated tech job postings to yield quantified fit scores and actionable improvement advice.",
+        "estimatedDuration": "4-5 weeks (approx. 35-40 hours total)",
+        "problemStatement": {
+          "existingProblem": "Entry-level tech job applicants frequently struggle to navigate automated Applicant Tracking Systems (ATS) because their resumes lack critical industry keywords, clear formatting, or role alignment.",
+          "whyItMatters": "Over 75% of job applications are filtered out by automated screening software before a recruiter ever reads them, leaving qualified candidates unaware of why they are not securing interviews.",
+          "proposedSolution": "A user-friendly, transparent web dashboard that parses user resumes, grades them on ATS-readiness across quantifiable metrics, and computes cosine similarity against live tech job profiles to suggest best-fit career paths.",
+          "realWorldApplications": [
+            "University Career Centers providing automated preliminary resume screening for students",
+            "Bootcamp and self-taught developers seeking to optimize their profiles for junior software roles",
+            "Technical staffing agencies automating initial candidate-to-requisition matching"
+          ]
+        },
+        "objectives": {
+          "mainObjective": "Build an end-to-end full-stack web application that parses tech resumes, generates objective grading reports, and matches candidates to appropriate technology roles using standard NLP techniques.",
+          "specificObjectives": [
+            "Implement robust PDF text extraction and sanitation pipelines using Python libraries",
+            "Develop keyword extraction and ATS scoring heuristics evaluating structure, grammar, and skill frequency",
+            "Build a TF-IDF vectorization and cosine similarity engine to compare resumes against tech job descriptions",
+            "Design an interactive, accessible web dashboard using Streamlit to present metrics, scores, and job recommendations",
+            "Containerize or deploy the application to a cloud platform for live demonstration"
+          ],
+          "expectedOutcomes": [
+            "A fully functional web portal capable of parsing PDF resumes within 3 seconds",
+            "An automated scorecard offering a grade from 0 to 100 with category breakdowns (skills, impact, formatting)",
+            "A ranked top-5 match list of relevant tech roles with similarity percentages and missing keyword suggestions"
+          ]
+        },
+        "feasibility": {
+          "score": 92,
+          "technicalFeasibility": "Highly viable for beginners. It avoids resource-heavy deep learning training by utilizing proven, lightweight Natural Language Processing techniques (NLTK, scikit-learn, TF-IDF) and rapid UI prototyping with Streamlit.",
+          "implementationComplexity": "Moderate complexity localized to handling messy unstructured text extracted from non-standard PDF formats, and calibrating keyword scoring algorithms to prevent biased grades.",
+          "requiredResources": [
+            "Standard development machine with 8GB RAM",
+            "Python 3.10+ runtime environment",
+            "Free-tier cloud hosting (Streamlit Community Cloud or Render)",
+            "Sample dataset of curated tech job descriptions (JSON or CSV)"
+          ],
+          "majorAssumptions": [
+            "Uploaded resumes are standard text-based PDFs rather than flattened image scans requiring OCR",
+            "Job descriptions represent standard industry roles like Frontend Developer, Backend Developer, and Data Analyst",
+            "Heuristic rule-based grading combined with vector similarity is sufficient for early-career guidance"
+          ],
+          "expectedChallenges": [
+            "Handling multi-column PDF layouts that scramble extracted text order",
+            "Preventing false keyword positives (e.g., matching 'Java' inside 'JavaScript')",
+            "Establishing realistic scoring thresholds that provide constructive rather than discouraging feedback"
+          ]
+        },
+        "technologies": [
+          {
+            "name": "Python",
+            "category": "Backend",
+            "reason": "Dominant language for data science and text processing, providing unmatched ecosystem support for beginners.",
+            "docsUrl": "https://docs.python.org/3/"
+          },
+          {
+            "name": "Streamlit",
+            "category": "Frontend",
+            "reason": "Enables rapid building of interactive, data-driven web frontends entirely in Python without requiring complex JavaScript frameworks.",
+            "docsUrl": "https://docs.streamlit.io/"
+          },
+          {
+            "name": "PyPDF2 / pdfplumber",
+            "category": "Tool",
+            "reason": "Efficient libraries for programmatic text and metadata extraction from standard PDF files.",
+            "docsUrl": "https://github.com/jsvine/pdfplumber"
+          },
+          {
+            "name": "scikit-learn",
+            "category": "AI/ML",
+            "reason": "Provides accessible implementations of TF-IDF vectorizers and cosine similarity algorithms without deep learning overhead.",
+            "docsUrl": "https://scikit-learn.org/stable/"
+          },
+          {
+            "name": "NLTK",
+            "category": "AI/ML",
+            "reason": "Industry standard library for text preprocessing, tokenization, stopword removal, and lemmatization.",
+            "docsUrl": "https://www.nltk.org/"
+          },
+          {
+            "name": "Pandas",
+            "category": "Tool",
+            "reason": "Simplifies management, querying, and filtering of the underlying tech job descriptions dataset.",
+            "docsUrl": "https://pandas.pydata.org/"
+          }
+        ],
+        "requiredSkills": {
+          "programmingLanguages": [
+            "Python 3.x"
+          ],
+          "frameworks": [
+            "Streamlit",
+            "scikit-learn"
+          ],
+          "coreConcepts": [
+            "Natural Language Processing (NLP)",
+            "TF-IDF Vectorization & Cosine Similarity",
+            "Regular Expressions (RegEx)",
+            "Document Parsing & Text Normalization"
+          ],
+          "practicalSkills": [
+            "Git version control",
+            "Virtual environment management (venv/conda)",
+            "Modular Python programming",
+            "Data visualization via charts"
+          ]
+        },
+        "architecture": {
+          "pattern": "Monolithic Client-Server Pipeline (Streamlit Integrated)",
+          "description": "Streamlit serves as both the reactive user interface and execution runtime. User-uploaded files trigger a linear pipeline passing through text extraction, normalization, scoring heuristics, and vector matching against a local curated dataset.",
+          "components": [
+            {
+              "layer": "Presentation Layer",
+              "role": "File upload widgets, interactive score gauges, missing skill tags, and matched job cards",
+              "technologies": [
+                "Streamlit UI Components"
+              ]
+            },
+            {
+              "layer": "Text Processing & Parsing Engine",
+              "role": "Extracts raw text from PDF streams, removes formatting noise, and extracts core skills using regular expressions and dictionaries",
+              "technologies": [
+                "pdfplumber",
+                "re",
+                "NLTK"
+              ]
+            },
+            {
+              "layer": "Recommendation & Scoring Engine",
+              "role": "Computes structural score breakdown and runs vector similarity against job description corpus",
+              "technologies": [
+                "scikit-learn (TfidfVectorizer, cosine_similarity)",
+                "Pandas"
+              ]
+            }
+          ],
+          "dataFlow": [
+            "Step 1: User uploads a resume (PDF) through the Streamlit web dashboard",
+            "Step 2: pdfplumber extracts raw textual content; NLTK cleans and tokenizes strings",
+            "Step 3: Rule engine scans for required sections, action verbs, contact information, and tech stacks to compute the Resume Grade (0-100)",
+            "Step 4: Vectorizer transforms cleaned resume text and target job postings into TF-IDF vectors",
+            "Step 5: Cosine similarity identifies top matching tech job descriptions and highlights missing target skills",
+            "Step 6: Dashboard dynamically displays metrics, charts, and ranked job recommendations"
+          ]
+        },
+        "learningRoadmap": [
+          {
+            "stepNumber": 1,
+            "topic": "Python Text Manipulation & Regular Expressions",
+            "explanation": "Mastering string manipulation, regex patterns, and handling unstructured string data extracted from documents.",
+            "learningObjectives": [
+              "Learn regex syntax for email, phone number, and URL extraction",
+              "Clean unstructured strings by stripping whitespace and non-standard characters"
+            ],
+            "suggestedPractice": "Write a Python script that parses a raw paragraph and extracts all emails and GitHub URLs using the 're' module.",
+            "estimatedHours": "5-6 hours"
+          },
+          {
+            "stepNumber": 2,
+            "topic": "PDF Parsing and Extraction Basics",
+            "explanation": "Understanding binary document structures and using tools like pdfplumber to pull clean text streams while handling multi-page layouts.",
+            "learningObjectives": [
+              "Read binary PDF streams in Python",
+              "Extract text page-by-page while gracefully handling exceptions"
+            ],
+            "suggestedPractice": "Create a script that reads 3 sample resumes and writes the extracted text into separate .txt files.",
+            "estimatedHours": "4-5 hours"
+          },
+          {
+            "stepNumber": 3,
+            "topic": "NLP Fundamentals & Vector Similarity",
+            "explanation": "Understanding how text is represented as numbers through Bag of Words, TF-IDF, and how cosine similarity measures document relatedness.",
+            "learningObjectives": [
+              "Understand term frequency-inverse document frequency (TF-IDF)",
+              "Implement cosine similarity using scikit-learn",
+              "Perform stopword filtering and tokenization"
+            ],
+            "suggestedPractice": "Take two short project descriptions and compute their mathematical similarity percentage using scikit-learn.",
+            "estimatedHours": "7-8 hours"
+          },
+          {
+            "stepNumber": 4,
+            "topic": "Streamlit Web UI & Rapid Prototyping",
+            "explanation": "Building clean, interactive user interfaces using pure Python state management and native file upload components.",
+            "learningObjectives": [
+              "Build multi-column layouts with metric indicators and progress bars",
+              "Implement file upload handling in Streamlit"
+            ],
+            "suggestedPractice": "Build a mini Streamlit app that accepts a text input and shows character and word counts reactively.",
+            "estimatedHours": "5-6 hours"
+          },
+          {
+            "stepNumber": 5,
+            "topic": "Deployment and Application Packaging",
+            "explanation": "Packaging dependencies using requirements.txt and hosting the application publicly for portfolio demonstration.",
+            "learningObjectives": [
+              "Structure clean project repositories with documentation",
+              "Deploy a Streamlit app to Streamlit Community Cloud"
+            ],
+            "suggestedPractice": "Deploy a simple 'Hello World' Streamlit dashboard via GitHub to Streamlit Community Cloud.",
+            "estimatedHours": "3-4 hours"
+          }
+        ],
+        "milestonesList": [
+          {
+            "stepNumber": 1,
+            "title": "Environment Setup & Document Parsing Pipeline",
+            "description": "Establish the project repository, virtual environment, and develop robust text extraction from PDF files.",
+            "tasks": [
+              "Initialize Git repository and setup virtual environment with dependencies",
+              "Implement resume parsing module using pdfplumber",
+              "Write unit tests verifying text extraction across single and multi-page sample PDFs"
+            ],
+            "expectedDeliverable": "A standalone Python module that accepts a PDF file path and outputs sanitized, clean text."
+          },
+          {
+            "stepNumber": 2,
+            "title": "Resume Grading & Heuristic Scoring Engine",
+            "description": "Create the rule-based grading system evaluating key ATS metrics and content quality.",
+            "tasks": [
+              "Define evaluation dictionary (technical skills, action verbs, section headers)",
+              "Build scoring functions evaluating contact details, section completeness, and word count",
+              "Generate a composite score (0-100) with descriptive strengths and warnings"
+            ],
+            "expectedDeliverable": "A scoring engine that outputs a structured JSON grading report for any parsed resume text."
+          },
+          {
+            "stepNumber": 3,
+            "title": "Job Dataset Curation & Vector Similarity Matching",
+            "description": "Compile tech job profiles and build the TF-IDF comparison engine to calculate role fit.",
+            "tasks": [
+              "Curate a CSV dataset of 25+ tech role descriptions (Frontend, Backend, DevOps, Data Analyst, etc.)",
+              "Implement TF-IDF Vectorizer to vectorize both resume text and job descriptions",
+              "Compute cosine similarity matrix and extract the top-5 highest matching roles"
+            ],
+            "expectedDeliverable": "A matcher function returning top job recommendations along with similarity percentages."
+          },
+          {
+            "stepNumber": 4,
+            "title": "Skills Gap & Keyword Identification Module",
+            "description": "Compare candidate skills against the requirements of matched jobs to highlight missing competencies.",
+            "tasks": [
+              "Extract keywords present in target job postings that are missing in the resume",
+              "Categorize missing keywords into 'Critical Tech Skills' and 'Recommended Tools'",
+              "Provide actionable recommendations on phrasing and bullet point improvement"
+            ],
+            "expectedDeliverable": "A recommendation module providing actionable missing-keyword checklists."
+          },
+          {
+            "stepNumber": 5,
+            "title": "Streamlit Frontend Development & Dashboard Integration",
+            "description": "Build an intuitive user interface connecting all backend engines into a cohesive application.",
+            "tasks": [
+              "Create drag-and-drop PDF file uploader",
+              "Render visual scorecard with metric gauges, radial charts, and color-coded feedback",
+              "Display job match cards showing percentage match and missing skills"
+            ],
+            "expectedDeliverable": "An interactive, fully responsive local web dashboard running on Streamlit."
+          },
+          {
+            "stepNumber": 6,
+            "title": "End-to-End Testing, Optimization & Cloud Deployment",
+            "description": "Conduct edge-case testing, optimize text cleaning, and deploy the application live.",
+            "tasks": [
+              "Test application against 15 diverse real-world developer resumes",
+              "Refine layout and add informative tooltips and instructions",
+              "Deploy live app to Streamlit Community Cloud and document repository"
+            ],
+            "expectedDeliverable": "A publicly accessible web URL hosting the live application accompanied by a polished README."
+          }
+        ],
+        "challenges": [
+          {
+            "challenge": "Non-standard or corrupted PDF text extraction",
+            "impact": "Resumes created in graphical design tools (e.g., Canva) can extract as empty strings or jumbled characters.",
+            "recommendedSolution": "Implement defensive text checks. If extracted text falls below 50 characters, notify user with a helpful warning that their PDF contains flattened images rather than selectable text."
+          },
+          {
+            "challenge": "Keyword false positives and substring collision",
+            "impact": "Words like 'Go' matching 'Good', or 'C' matching letters inside other words, skewing skill counts.",
+            "recommendedSolution": "Use strict word boundary regular expressions (\\b[Gg]o\\b) and curated case-sensitive checks for short acronyms."
+          },
+          {
+            "challenge": "Over-optimistic or erratic similarity scores with TF-IDF",
+            "impact": "Generic words like 'experience', 'team', or 'software' dominating similarity calculations, resulting in identical scores across all roles.",
+            "recommendedSolution": "Incorporate domain-specific custom stop words and set 'min_df' and 'ngram_range=(1, 2)' parameters in TfidfVectorizer to emphasize specific tech phrases."
+          }
+        ],
+        "testingStrategy": {
+          "overview": "A practical testing strategy blending unit tests for parsing and scoring functions with manual exploratory validation using diverse resume templates.",
+          "types": [
+            "Unit Testing",
+            "Functional Integration Testing",
+            "Input Validation Testing",
+            "UI Usability Testing"
+          ],
+          "scenarios": [
+            {
+              "scenario": "Upload of an unreadable or encrypted PDF",
+              "type": "Input Validation",
+              "expectedOutcome": "App catches the exception cleanly and alerts the user to upload a standard text PDF without crashing."
+            },
+            {
+              "scenario": "Resume with zero technical skills listed",
+              "type": "Unit Testing",
+              "expectedOutcome": "Scoring algorithm yields a low technical score and suggests essential foundational keywords rather than failing with division-by-zero."
+            },
+            {
+              "scenario": "Matching resume against job descriptions dataset",
+              "type": "Functional Integration",
+              "expectedOutcome": "Engine successfully returns top 5 unique jobs with similarity scores bounded between 0% and 100% in descending order."
+            }
+          ]
+        },
+        "documentationGuide": {
+          "readmeStructure": [
+            "Project Title, Banner & Live Demo Link",
+            "Problem Statement & Features Overview",
+            "Interactive Architecture & Data Flow Diagram",
+            "Installation & Local Quickstart Instructions",
+            "Directory Structure & Module Explanations",
+            "Scoring Methodology & Metric Breakdown",
+            "Future Roadmap & Contribution Guidelines"
+          ],
+          "systemArchitectureNotes": "Document how the Streamlit session state handles uploaded files and explain how the TF-IDF cosine similarity matrix compares vector spaces.",
+          "modulesExplanation": [
+            "parser.py: Handles PDF loading and string sanitization via pdfplumber",
+            "grader.py: Evaluates section completeness, word density, and assigns categorical scores",
+            "matcher.py: Implements TF-IDF vectorization and cosine similarity against jobs.csv",
+            "app.py: Main Streamlit application UI layout and user interaction management"
+          ],
+          "conclusionOutline": "Summary of lessons learned in unstructured text processing, limitations of non-deep-learning NLP, and architectural patterns for scaling to LLMs."
+        },
+        "presentationGuide": {
+          "targetAudience": "Hackathon judges, college project evaluators, and prospective tech interviewers",
+          "slides": [
+            {
+              "slideNumber": 1,
+              "title": "The ATS Black Hole: Why Candidates Get Screened Out",
+              "keyPoints": [
+                "Over 75% of job applicants fail initial automated screenings",
+                "Junior developers often lack visibility into how systems evaluate resumes"
+              ],
+              "presentationTip": "Start with a relatable story of a qualified candidate being repeatedly ghosted by ATS platforms."
+            },
+            {
+              "slideNumber": 2,
+              "title": "Introducing ResumeFit AI",
+              "keyPoints": [
+                "Instant parsing and automated ATS score generation",
+                "Mathematical tech role alignment using TF-IDF vector similarity",
+                "Clear, constructive recommendations to fix missing keywords"
+              ],
+              "presentationTip": "Show a clear before-and-after comparison of a poorly optimized resume versus an optimized one."
+            },
+            {
+              "slideNumber": 3,
+              "title": "Technical Architecture & Pipeline",
+              "keyPoints": [
+                "Document parsing -> Text normalization -> Heuristic scoring",
+                "Vector space representation and cosine similarity matching",
+                "Lightweight, efficient, and fully functional without expensive API costs"
+              ],
+              "presentationTip": "Keep the mathematical explanation intuitive; explain cosine similarity as angle distance between two skill sets."
+            },
+            {
+              "slideNumber": 4,
+              "title": "Live Product Demonstration",
+              "keyPoints": [
+                "Upload sample resume in real time",
+                "Review generated score breakdown and top matching job roles",
+                "Inspect missing keyword actionable advice"
+              ],
+              "presentationTip": "Use a realistic junior developer resume with intentional missing keywords to showcase the feedback loop."
+            },
+            {
+              "slideNumber": 5,
+              "title": "Impact & Future Enhancements",
+              "keyPoints": [
+                "Empowers early-career talent with direct feedback",
+                "Future plans: LLM-powered bullet point rewrites and automated LinkedIn job scraping"
+              ],
+              "presentationTip": "Conclude by emphasizing how this project helped you master core NLP principles from the ground up."
+            }
+          ],
+          "demoChecklist": [
+            "Ensure Streamlit local server is running on localhost:8501 or live cloud app is awake",
+            "Pre-download 3 distinct test resumes (Strong Software Engineer, Junior Data Analyst, Poorly Formatted Resume)",
+            "Verify jobs.csv dataset is loaded and accessible",
+            "Pre-cache browser tab to avoid cold-start latency"
+          ]
+        },
+        "futureImprovements": [
+          "Integrate open-source LLMs (via Ollama or Groq) to automatically rewrite bullet points into high-impact STAR-format statements",
+          "Add live job web-scraping to match resumes against active postings from platforms like Indeed or RemoteOK",
+          "Implement automated export of a revised, ATS-friendly PDF template with one click"
+        ]
+      },
+      "createdAt": "2026-10-12T18:02:06.748Z",
+      "updatedAt": "2026-10-12T18:02:06.748Z"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "mls_c85f115a-f9c1-4310-80ca-92e84c7f1e70",
+      "projectId": "prj_ec3e8153-5db9-453f-adf9-17a3eafadf4b",
+      "stepNumber": 1,
+      "title": "Packet Ingestion & PCAP Parsing Core",
+      "description": "Set up raw socket ingestion and parse Ethernet, IPv4, TCP, and UDP headers into structured objects.",
+      "tasks": [
+        "Initialize network interface listener",
+        "Parse IP headers and port numbers",
+        "Unit test with sample PCAP files"
+      ],
+      "expectedDeliverable": "Working packet reader CLI outputting structured JSON flow events",
+      "isCompleted": true,
+      "completedAt": "2026-10-12T17:50:54.457Z",
+      "createdAt": "2026-10-12T17:50:54.457Z"
+    },
+    {
+      "id": "mls_d4103ee9-32ce-4256-a5f8-a97bf777934a",
+      "projectId": "prj_ec3e8153-5db9-453f-adf9-17a3eafadf4b",
+      "stepNumber": 2,
+      "title": "Statistical Feature Extraction Pipeline",
+      "description": "Extract 42 flow features including byte distribution entropy, inter-packet arrival time, and TCP flag anomalies.",
+      "tasks": [
+        "Implement rolling 5-second window tracker",
+        "Calculate Shannon entropy on payloads",
+        "Export feature vectors to tensor format"
+      ],
+      "expectedDeliverable": "Real-time vector generator operating under 2ms per packet",
+      "isCompleted": true,
+      "completedAt": "2026-10-12T17:50:54.457Z",
+      "createdAt": "2026-10-12T17:50:54.457Z"
+    },
+    {
+      "id": "mls_f65d5b55-bf2c-489a-9a95-300424d646ec",
+      "projectId": "prj_ec3e8153-5db9-453f-adf9-17a3eafadf4b",
+      "stepNumber": 3,
+      "title": "ONNX Neural Inference Engine Integration",
+      "description": "Load pre-trained quantized threat model and evaluate incoming feature vectors in real time.",
+      "tasks": [
+        "Export PyTorch model to ONNX Int8",
+        "Benchmark inference latency",
+        "Calibrate classification threshold to 0.85"
+      ],
+      "expectedDeliverable": "Sub-10ms inference pipeline with threat probability scoring",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T17:50:54.457Z"
+    },
+    {
+      "id": "mls_8bb810ff-26be-4be5-b576-f227fb18c7d0",
+      "projectId": "prj_ec3e8153-5db9-453f-adf9-17a3eafadf4b",
+      "stepNumber": 4,
+      "title": "Threat Event Dispatcher & Storage",
+      "description": "Store anomalous events in PostgreSQL and publish alerts to connected client sessions via WebSockets.",
+      "tasks": [
+        "Design security_events schema",
+        "Implement WebSocket broadcast channel",
+        "Add rate limiting and event aggregation"
+      ],
+      "expectedDeliverable": "Working database persistence and real-time streaming endpoint",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T17:50:54.457Z"
+    },
+    {
+      "id": "mls_6b7c48fe-6a37-411b-b4f3-c21c4ca8d94f",
+      "projectId": "prj_ec3e8153-5db9-453f-adf9-17a3eafadf4b",
+      "stepNumber": 5,
+      "title": "Interactive Defense Dashboard & Telemetry UI",
+      "description": "Build responsive React interface displaying live telemetry graphs, threat alerts, and drill-down inspection.",
+      "tasks": [
+        "Create alert feed with severity tags",
+        "Build live packet volume chart",
+        "Add IP filtering and search"
+      ],
+      "expectedDeliverable": "Production-ready dark cybernetic defense dashboard",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T17:50:54.457Z"
+    },
+    {
+      "id": "mls_e077fe2e-f4c9-4f66-a6c5-1f2f4b492023",
+      "projectId": "prj_ec3e8153-5db9-453f-adf9-17a3eafadf4b",
+      "stepNumber": 6,
+      "title": "Comprehensive Security & MITRE ATT&CK Defense Audit",
+      "description": "Perform stress-testing under simulated DDoS attacks, benchmark false positive rates, and prepare final documentation.",
+      "tasks": [
+        "Replay DARPA/CIC-IDS attacks with tcpreplay",
+        "Validate zero frame-loss",
+        "Compile defense presentation slides"
+      ],
+      "expectedDeliverable": "Final verified system, defense slides, and project report",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T17:50:54.457Z"
+    },
+    {
+      "id": "mls_52803449-146c-420d-8e52-8ee64ea69f7a",
+      "projectId": "prj_be1cbd67-d653-4444-8ced-1b06726d6ef0",
+      "stepNumber": 1,
+      "title": "Environment Setup & Document Parsing Pipeline",
+      "description": "Establish the project repository, virtual environment, and develop robust text extraction from PDF files.",
+      "tasks": [
+        "Initialize Git repository and setup virtual environment with dependencies",
+        "Implement resume parsing module using pdfplumber",
+        "Write unit tests verifying text extraction across single and multi-page sample PDFs"
+      ],
+      "expectedDeliverable": "A standalone Python module that accepts a PDF file path and outputs sanitized, clean text.",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T18:02:06.748Z"
+    },
+    {
+      "id": "mls_7558d5cd-3d87-4741-8574-0d94fa4ac5c3",
+      "projectId": "prj_be1cbd67-d653-4444-8ced-1b06726d6ef0",
+      "stepNumber": 2,
+      "title": "Resume Grading & Heuristic Scoring Engine",
+      "description": "Create the rule-based grading system evaluating key ATS metrics and content quality.",
+      "tasks": [
+        "Define evaluation dictionary (technical skills, action verbs, section headers)",
+        "Build scoring functions evaluating contact details, section completeness, and word count",
+        "Generate a composite score (0-100) with descriptive strengths and warnings"
+      ],
+      "expectedDeliverable": "A scoring engine that outputs a structured JSON grading report for any parsed resume text.",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T18:02:06.748Z"
+    },
+    {
+      "id": "mls_9e43ccb6-4797-4314-b2a0-2b41e679295a",
+      "projectId": "prj_be1cbd67-d653-4444-8ced-1b06726d6ef0",
+      "stepNumber": 3,
+      "title": "Job Dataset Curation & Vector Similarity Matching",
+      "description": "Compile tech job profiles and build the TF-IDF comparison engine to calculate role fit.",
+      "tasks": [
+        "Curate a CSV dataset of 25+ tech role descriptions (Frontend, Backend, DevOps, Data Analyst, etc.)",
+        "Implement TF-IDF Vectorizer to vectorize both resume text and job descriptions",
+        "Compute cosine similarity matrix and extract the top-5 highest matching roles"
+      ],
+      "expectedDeliverable": "A matcher function returning top job recommendations along with similarity percentages.",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T18:02:06.748Z"
+    },
+    {
+      "id": "mls_a4d65d3c-21b6-4c67-9287-bf8186a4e975",
+      "projectId": "prj_be1cbd67-d653-4444-8ced-1b06726d6ef0",
+      "stepNumber": 4,
+      "title": "Skills Gap & Keyword Identification Module",
+      "description": "Compare candidate skills against the requirements of matched jobs to highlight missing competencies.",
+      "tasks": [
+        "Extract keywords present in target job postings that are missing in the resume",
+        "Categorize missing keywords into 'Critical Tech Skills' and 'Recommended Tools'",
+        "Provide actionable recommendations on phrasing and bullet point improvement"
+      ],
+      "expectedDeliverable": "A recommendation module providing actionable missing-keyword checklists.",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T18:02:06.748Z"
+    },
+    {
+      "id": "mls_0c330c3d-68bf-49be-8529-814d89bd53d3",
+      "projectId": "prj_be1cbd67-d653-4444-8ced-1b06726d6ef0",
+      "stepNumber": 5,
+      "title": "Streamlit Frontend Development & Dashboard Integration",
+      "description": "Build an intuitive user interface connecting all backend engines into a cohesive application.",
+      "tasks": [
+        "Create drag-and-drop PDF file uploader",
+        "Render visual scorecard with metric gauges, radial charts, and color-coded feedback",
+        "Display job match cards showing percentage match and missing skills"
+      ],
+      "expectedDeliverable": "An interactive, fully responsive local web dashboard running on Streamlit.",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T18:02:06.748Z"
+    },
+    {
+      "id": "mls_9815d802-5516-4974-8dab-d5112e883674",
+      "projectId": "prj_be1cbd67-d653-4444-8ced-1b06726d6ef0",
+      "stepNumber": 6,
+      "title": "End-to-End Testing, Optimization & Cloud Deployment",
+      "description": "Conduct edge-case testing, optimize text cleaning, and deploy the application live.",
+      "tasks": [
+        "Test application against 15 diverse real-world developer resumes",
+        "Refine layout and add informative tooltips and instructions",
+        "Deploy live app to Streamlit Community Cloud and document repository"
+      ],
+      "expectedDeliverable": "A publicly accessible web URL hosting the live application accompanied by a polished README.",
+      "isCompleted": false,
+      "completedAt": null,
+      "createdAt": "2026-10-12T18:02:06.748Z"
+    }
+  ],
+  "chatMessages": [
+    {
+      "id": "msg_90a2b239-7a70-477b-bd3d-3ac759161b15",
+      "projectId": "prj_ec3e8153-5db9-453f-adf9-17a3eafadf4b",
+      "sender": "assistant",
+      "message": "Hello! I am your **ProjectsAnalyzer AI Mentor** for **AI Cyber Threat Detection & Packet Analyzer**.\n\nI have reviewed your project blueprint across 6 milestones and your target technology stack (TypeScript / React, Node.js & Express, Python & ONNX Runtime, eBPF / libpcap).\n\nFeel free to ask me questions like:\n- *How should I start Milestone 1?*\n- *Can you explain the system architecture in detail?*\n- *Which tutorials or documentation should I read first?*\n\nLet's build something extraordinary together! What would you like help with today?",
+      "createdAt": "2026-10-12T17:50:54.457Z"
+    },
+    {
+      "id": "msg_bb1f9c8c-d735-4949-8f1f-a9623ebd7514",
+      "projectId": "prj_be1cbd67-d653-4444-8ced-1b06726d6ef0",
+      "sender": "assistant",
+      "message": "Hello! I am your **ProjectsAnalyzer AI Mentor** for **ResumeFit AI: Intelligent Resume Grader & Tech Job Matcher**.\n\nI have reviewed your project blueprint across 6 milestones and your target technology stack (Python, Streamlit, PyPDF2 / pdfplumber, scikit-learn).\n\nFeel free to ask me questions like:\n- *How should I start Milestone 1?*\n- *Can you explain the system architecture in detail?*\n- *Which tutorials or documentation should I read first?*\n\nLet's build something extraordinary together! What would you like help with today?",
+      "createdAt": "2026-10-12T18:02:06.748Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "tok_41e48a969fa513fc1fe8be2ad6f1404e8fd03a8eb8b2f8c622826b3b87abdfea",
+      "userId": "usr_aa43ecc3-da94-4025-91f2-548165e3e746",
+      "expiresAt": "2026-11-11T17:50:54.456Z"
+    },
+    {
+      "token": "tok_50e5a2d498b469bd05d79c5e0ebd5de88898552f77330f817a27baa38623fbba",
+      "userId": "usr_58647f41-7bf0-4bd8-860a-76214156d673",
+      "expiresAt": "2026-11-11T17:53:02.866Z"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Ignore HMR WebSocket connection errors as HMR is disabled in AI Studio environment
+      window.addEventListener('error', function(event) {
+        if (event && (
+          (event.message && (event.message.includes('WebSocket') || event.message.includes('createWebSocketModuleRunnerTransport'))) ||
+          (event.filename && event.filename.includes('@vite/client'))
+        )) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+          return true;
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event && event.reason && (
+          String(event.reason).includes('WebSocket') ||
+          String(event.reason).includes('createWebSocketModuleRunnerTransport')
+        )) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+        }
+      }, true);
+    </script>
+    <title>ProjectsAnalyzer AI - AI-Powered Project Analysis & Roadmaps</title>
+    <meta name="description" content="ProjectsAnalyzer AI analyzes your ideas, creates personalized development roadmaps, recommends technologies, and guides you with an AI project mentor." />
+    <meta property="og:title" content="ProjectsAnalyzer AI - AI-Powered Project Analysis & Roadmaps" />
+    <meta property="og:description" content="Transform your project ideas into reality with AI-powered analysis, roadmaps, milestone tracking, and mentorship." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
